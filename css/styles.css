@@ -101,7 +101,7 @@ MAIN:
 }
 
 .card {
-  display: none;
+  display: block;
   background: var(--clr-gradient);
   max-width: 412px;
   height: 416px;
@@ -188,6 +188,36 @@ MAIN:
   color: var(--clr-grey900);
 }
 
+.card2 {
+  /* display: none; */
+  background: var(--clr-gradient);
+  max-width: 412px;
+  height: 416px;
+  padding: var(--40px) var(--32px);
+  border-radius: var(--30px);
+}
+
+.card__decor-submitted {
+  width: 162px;
+  height: 108px;
+}
+
+.card__final-score {
+  margin: var(--32px) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--clr-grey900);
+  border-radius: 22.5px;
+  width: 193px;
+  height: 32px;
+  color: var(--clr-orange500);
+}
+
+.card__description2 {
+  width: 340px;
+}
 /* 
 ********************************
 FOOTER:
@@ -225,6 +255,13 @@ FOOTER:
 UTILITY CLASSES:
 ********************************
 */
-.active {
-  display: block;
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.inactive {
+  /* This needs to be uncommented in order to work */
+  /* display: none; */
 }
