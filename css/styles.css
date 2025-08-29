@@ -4,7 +4,7 @@
   --clr-grey900: #262e38;
   --clr-grey500: #969fad;
   --clr-orange500: #fc7614;
-  --clr-gradient: linear-gradient(0deg, #232a34 0%, #181e27 100%);
+  --clr-gradient: linear-gradient(180deg, #232a34 0%, #181e27 100%);
   --clr-attribution: #3e52a3;
 
   /* Pixel Sizes: */
@@ -66,9 +66,9 @@ GLOBAL CSS VALUES:
 
 body {
   font-family: "Overpass", sans-serif;
-  font-size: var(--16px);
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 24px;
   letter-spacing: 0;
 
   background-color: var(--clr-grey950);
@@ -84,11 +84,109 @@ svg {
   max-width: 100%;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* 
 ********************************
 MAIN:
 ********************************
 */
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: none;
+  background: var(--clr-gradient);
+  max-width: 412px;
+  height: 416px;
+  padding: var(--32px) var(--24px);
+  border-radius: var(--30px);
+}
+
+.card__decor-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-grey900);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 32px;
+}
+
+.card__decor {
+  width: 16.5px;
+  height: var(--16px);
+}
+.card__title {
+  font-size: var(--28px);
+  line-height: 35px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+.card__description {
+  margin-bottom: 16px;
+}
+.card__btn-group {
+  display: flex;
+  gap: var(--24px);
+  max-width: 351px;
+  margin-bottom: 32px;
+}
+
+.card__btn.selected-btn,
+.card__btn.selected-btn:hover {
+  background-color: white;
+  color: var(--clr-grey900);
+}
+
+.card__btn {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--clr-grey900);
+  color: var(--clr-grey500);
+  font-size: var(--16px);
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.card__btn:hover {
+  background-color: var(--clr-orange500);
+  color: var(--clr-grey900);
+}
+
+.card__submit {
+  background-color: var(--clr-orange500);
+  border-radius: 22.5px;
+  width: 351px;
+  height: 45px;
+  border: none;
+  text-transform: uppercase;
+  color: var(--clr-grey950);
+  font-size: var(--14px);
+  line-height: var(--24px);
+  letter-spacing: 0.17px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.card__submit:hover {
+  background-color: white;
+  color: var(--clr-grey900);
+}
 
 /* 
 ********************************
@@ -120,4 +218,13 @@ FOOTER:
 .attribution a:hover,
 .attribution a:active {
   opacity: 75%;
+}
+
+/* 
+********************************
+UTILITY CLASSES:
+********************************
+*/
+.active {
+  display: block;
 }
