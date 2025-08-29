@@ -1,0 +1,123 @@
+:root {
+  /* Colors: */
+  --clr-grey950: #131518;
+  --clr-grey900: #262e38;
+  --clr-grey500: #969fad;
+  --clr-orange500: #fc7614;
+  --clr-gradient: linear-gradient(0deg, #232a34 0%, #181e27 100%);
+  --clr-attribution: #3e52a3;
+
+  /* Pixel Sizes: */
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --10px: 0.625rem;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --24px: 1.5rem;
+  --26px: 1.625rem;
+  --28px: 1.75rem;
+  --30px: 1.875rem;
+  --32px: 2rem;
+  --34px: 2.125rem;
+  --36px: 2.25rem;
+  --38px: 2.375rem;
+  --40px: 2.5rem;
+  --50px: 3.125rem;
+  --60px: 3.75rem;
+}
+
+/* 
+********************************
+SELF-HOSTING FONT:
+********************************
+*/
+
+/* VARIABLE FONT: */
+@font-face {
+  font-family: "Overpass";
+  src: url("/assets/fonts/Overpass-VariableFont_wght.woff2")
+      format("woff2-variations"),
+    url("/assets/fonts/Overpass-VariableFont_wght.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 
+********************************
+GLOBAL CSS VALUES:
+********************************
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: var(--16px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  background-color: var(--clr-grey950);
+  color: var(--clr-grey500);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 
+********************************
+MAIN:
+********************************
+*/
+
+/* 
+********************************
+FOOTER:
+********************************
+*/
+
+/*UPDATE VALUES!*/
+.attribution {
+  text-align: center;
+  font-size: var(--12px);
+  color: var(--clr-attribution);
+  margin-bottom: var(--24px);
+}
+
+/* LINKS */
+/* Default State */
+.attribution a:link {
+  color: var(--clr-attribution);
+  text-decoration: none;
+}
+
+/* Visited State */
+.attribution a:visited {
+  color: var(--clr-attribution);
+}
+
+/* State On Hover / Whilst being clicked */
+.attribution a:hover,
+.attribution a:active {
+  opacity: 75%;
+}
