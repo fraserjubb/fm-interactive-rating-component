@@ -1,55 +1,64 @@
-const card1 = document.querySelector(".card");
-const card2 = document.querySelector(".card2");
+/* 
+********************************
+ELEMENT SELECTIONS:
+********************************
+*/
+const ratingCard = document.querySelector(".card");
+const feedbackCard = document.querySelector(".card2");
 // const finalScore = document.querySelector(".card__final-score");
-const scoreBtn = document.querySelectorAll(".card__btn");
+const scoreButtons = document.querySelectorAll(".card__btn");
 const submitBtn = document.querySelector(".card__submit");
 
-// const returnedScore = scoreBtn.forEach(score => {
-//   if (score.classList.contains("selected-btn")) {
-//     score.textContent;
-//   }
-// });
-// console.log(returnedScore);
-
+/* 
+********************************
+FUNCTIONS:
+********************************
+*/
 function getSelectedScore() {
-  const selectedBtn = Array.from(scoreBtn).find(score =>
+  const selectedBtn = Array.from(scoreButtons).find(score =>
     score.classList.contains("selected-btn")
   );
 
-  const returnedScore = selectedBtn ? selectedBtn.textContent : null;
+  const selectedScore = selectedBtn ? selectedBtn.textContent : null;
 
-  return returnedScore;
+  return selectedScore;
 }
 
 function createScoreElement() {
-  const newP = document.createElement("p");
-  newP.className = "card__final-score";
+  const scoreElement = document.createElement("p");
+  scoreElement.className = "card__final-score";
 
-  const newContent = document.createTextNode(
+  const scoreText = document.createTextNode(
     `You selected ${getSelectedScore()} out of 5`
   );
 
-  newP.appendChild(newContent);
+  scoreElement.appendChild(scoreText);
 
-  return newP;
+  return scoreElement;
 }
 
 function displayFeedbackCard() {
-  card1.classList.add("inactive");
-  card2.classList.remove("inactive");
+  ratingCard.classList.add("inactive");
+  feedbackCard.classList.remove("inactive");
 }
 
 function insertFinalScore() {
-  const cardTitle = document.querySelector("#thanks");
+  const feedbackCardTitle = document.querySelector("#thanks");
 
-  const scoreGivenEl = createScoreElement();
+  const scoreGivenElement = createScoreElement();
 
-  cardTitle.insertAdjacentElement("beforebegin", scoreGivenEl);
+  feedbackCardTitle.insertAdjacentElement("beforebegin", scoreGivenElement);
 }
 
 function handleSubmitScore() {
   displayFeedbackCard();
   insertFinalScore();
 }
+
+/* 
+********************************
+EVENT LISTENERS:
+********************************
+*/
 
 submitBtn.addEventListener("click", handleSubmitScore);
