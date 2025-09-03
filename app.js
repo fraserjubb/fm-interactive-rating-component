@@ -1,6 +1,6 @@
 const card1 = document.querySelector(".card");
 const card2 = document.querySelector(".card2");
-const finalScore = document.querySelector(".card__final-score");
+// const finalScore = document.querySelector(".card__final-score");
 const scoreBtn = document.querySelectorAll(".card__btn");
 const submitBtn = document.querySelector(".card__submit");
 
@@ -11,48 +11,45 @@ const submitBtn = document.querySelector(".card__submit");
 // });
 // console.log(returnedScore);
 
-// const returnedScore = Array.from(scoreBtn).find(score =>
-//   score.classList.contains("selected-btn")
-// );
-// console.log(returnedScore);
+function getSelectedScore() {
+  const selectedBtn = Array.from(scoreBtn).find(score =>
+    score.classList.contains("selected-btn")
+  );
 
-const selectedBtn = Array.from(scoreBtn).find(score =>
-  score.classList.contains("selected-btn")
-);
+  const returnedScore = selectedBtn ? selectedBtn.textContent : null;
 
-const returnedScore = selectedBtn ? selectedBtn.textContent : null;
-console.log(returnedScore);
+  return returnedScore;
+}
 
-function displayFeedbackScore() {
+function createScoreElement() {
+  const newP = document.createElement("p");
+  newP.className = "card__final-score";
+
+  const newContent = document.createTextNode(
+    `You selected ${getSelectedScore()} out of 5`
+  );
+
+  newP.appendChild(newContent);
+
+  return newP;
+}
+
+function displayFeedbackCard() {
   card1.classList.add("inactive");
   card2.classList.remove("inactive");
 }
 
-function submitScore() {
-  displayFeedbackScore();
-  addElement();
-}
-
-submitBtn.addEventListener("click", submitScore);
-
-// console.log(finalScore.textContent);
-
-function addElement() {
-  console.log("I am here");
-  // create a new div element
-  const newP = document.createElement("p");
-  newP.className = "card__final-score";
-
-  // and give it some content
-  const newContent = document.createTextNode(
-    `You selected ${returnedScore} out of 5`
-  );
-
-  // add the text node to the newly created div
-  newP.appendChild(newContent);
-
-  // add the newly created element and its content into the DOM
+function insertFinalScore() {
   const cardTitle = document.querySelector("#thanks");
-  cardTitle.insertAdjacentElement("beforebegin", newP);
-  console.log(cardTitle);
+
+  const scoreGivenEl = createScoreElement();
+
+  cardTitle.insertAdjacentElement("beforebegin", scoreGivenEl);
 }
+
+function handleSubmitScore() {
+  displayFeedbackCard();
+  insertFinalScore();
+}
+
+submitBtn.addEventListener("click", handleSubmitScore);
