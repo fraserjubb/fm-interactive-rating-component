@@ -263,5 +263,5 @@ UTILITY CLASSES:
 }
 .inactive {
   /* This needs to be uncommented in order to work */
-  /* display: none; */
+  display: none;
 }
