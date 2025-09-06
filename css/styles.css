@@ -100,7 +100,12 @@ MAIN:
   justify-content: center;
 }
 
-.card {
+/* 
+***********
+RATING CARD 
+***********
+*/
+.rating-card {
   display: block;
   background: var(--clr-gradient);
   max-width: 412px;
@@ -109,7 +114,7 @@ MAIN:
   border-radius: var(--30px);
 }
 
-.card__decor-wrapper {
+.rating-card__icon-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,34 +125,35 @@ MAIN:
   margin-bottom: 32px;
 }
 
-.card__decor {
+.rating-card__icon {
   width: 16.5px;
   height: var(--16px);
 }
-.card__title {
+.rating-card__title,
+.feedback-card__title {
   font-size: var(--28px);
   line-height: 35px;
   font-weight: 700;
   color: white;
   margin-bottom: 16px;
 }
-.card__description {
+.rating-card__description {
   margin-bottom: 16px;
 }
-.card__btn-group {
+.rating-card__btn-group {
   display: flex;
   gap: var(--24px);
   max-width: 351px;
   margin-bottom: 32px;
 }
 
-.card__btn.selected-btn,
-.card__btn.selected-btn:hover {
+.rating-card__btn.rating-card__btn--selected,
+.rating-card__btn.rating-card__btn--selected:hover {
   background-color: white;
   color: var(--clr-grey900);
 }
 
-.card__btn {
+.rating-card__btn {
   width: 51px;
   height: 51px;
   border-radius: 50%;
@@ -162,12 +168,12 @@ MAIN:
   transition: 0.3s;
 }
 
-.card__btn:hover {
+.rating-card__btn:hover {
   background-color: var(--clr-orange500);
   color: var(--clr-grey900);
 }
 
-.card__submit {
+.rating-card__btn--submit {
   background-color: var(--clr-orange500);
   border-radius: 22.5px;
   width: 351px;
@@ -183,12 +189,17 @@ MAIN:
   transition: 0.3s;
 }
 
-.card__submit:hover {
+.rating-card__btn--submit:hover {
   background-color: white;
   color: var(--clr-grey900);
 }
 
-.card2 {
+/* 
+***********
+FEEDBACK CARD 
+***********
+*/
+.feedback-card {
   /* display: none; */
   background: var(--clr-gradient);
   max-width: 412px;
@@ -197,12 +208,12 @@ MAIN:
   border-radius: var(--30px);
 }
 
-.card__decor-submitted {
+.feedback-card__icon {
   width: 162px;
   height: 108px;
 }
 
-.card__final-score {
+.feedback-card__final-score {
   margin: var(--32px) 0;
   display: flex;
   justify-content: center;
@@ -215,16 +226,15 @@ MAIN:
   color: var(--clr-orange500);
 }
 
-.card__description2 {
+.feedback-card__description {
   width: 340px;
 }
+
 /* 
 ********************************
 FOOTER:
 ********************************
 */
-
-/*UPDATE VALUES!*/
 .attribution {
   text-align: center;
   font-size: var(--12px);
@@ -255,13 +265,14 @@ FOOTER:
 UTILITY CLASSES:
 ********************************
 */
-.column {
+.layout__column {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-.inactive {
+
+.is-inactive {
   /* This needs to be uncommented in order to work */
   display: none;
 }
