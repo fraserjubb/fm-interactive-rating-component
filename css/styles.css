@@ -100,18 +100,24 @@ MAIN:
   justify-content: center;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-gradient);
+  width: 100%;
+  max-width: 412px;
+  height: 416px;
+  border-radius: var(--30px);
+}
+
 /* 
 ***********
 RATING CARD 
 ***********
 */
 .rating-card {
-  display: block;
-  background: var(--clr-gradient);
-  max-width: 412px;
-  height: 416px;
+  /* display: block; */
   padding: var(--32px) var(--24px);
-  border-radius: var(--30px);
 }
 
 .rating-card__icon-wrapper {
@@ -147,12 +153,6 @@ RATING CARD
   margin-bottom: 32px;
 }
 
-.rating-card__btn.rating-card__btn--selected,
-.rating-card__btn.rating-card__btn--selected:hover {
-  background-color: white;
-  color: var(--clr-grey900);
-}
-
 .rating-card__btn {
   width: 51px;
   height: 51px;
@@ -173,10 +173,16 @@ RATING CARD
   color: var(--clr-grey900);
 }
 
+.rating-card__btn.rating-card__btn--selected {
+  background-color: white;
+  color: var(--clr-grey900);
+}
+
 .rating-card__btn--submit {
   background-color: var(--clr-orange500);
   border-radius: 22.5px;
-  width: 351px;
+  width: 100%;
+  max-width: 351px;
   height: 45px;
   border: none;
   text-transform: uppercase;
@@ -201,11 +207,13 @@ FEEDBACK CARD
 */
 .feedback-card {
   /* display: none; */
-  background: var(--clr-gradient);
-  max-width: 412px;
-  height: 416px;
+  /* background: var(--clr-gradient); */
+  /* max-width: 412px; */
+  /* height: 416px; */
   padding: var(--40px) var(--32px);
-  border-radius: var(--30px);
+  /* border-radius: var(--30px); */
+  align-items: center;
+  text-align: center;
 }
 
 .feedback-card__icon {
@@ -276,3 +284,8 @@ UTILITY CLASSES:
   /* This needs to be uncommented in order to work */
   display: none;
 }
+
+/* button:focus-visible {
+  outline: 2px solid var(--clr-orange500);
+  outline-offset: 4px;
+} */
