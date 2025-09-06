@@ -5,7 +5,6 @@ ELEMENT SELECTIONS:
 */
 const ratingCard = document.querySelector(".card");
 const feedbackCard = document.querySelector(".card2");
-// const finalScore = document.querySelector(".card__final-score");
 const scoreButtons = document.querySelectorAll(".card__btn");
 const submitBtn = document.querySelector(".card__submit");
 
@@ -14,6 +13,11 @@ const submitBtn = document.querySelector(".card__submit");
 FUNCTIONS:
 ********************************
 */
+function handleSelectedButton(e) {
+  scoreButtons.forEach(btn => btn.classList.remove("selected-btn"));
+  e.target.classList.add("selected-btn");
+}
+
 function getSelectedScore() {
   const selectedBtn = Array.from(scoreButtons).find(score =>
     score.classList.contains("selected-btn")
@@ -37,11 +41,6 @@ function createScoreElement() {
   return scoreElement;
 }
 
-function displayFeedbackCard() {
-  ratingCard.classList.add("inactive");
-  feedbackCard.classList.remove("inactive");
-}
-
 function insertFinalScore() {
   const feedbackCardTitle = document.querySelector("#thanks");
 
@@ -50,9 +49,14 @@ function insertFinalScore() {
   feedbackCardTitle.insertAdjacentElement("beforebegin", scoreGivenElement);
 }
 
+function displayFeedbackCard() {
+  ratingCard.classList.add("inactive");
+  feedbackCard.classList.remove("inactive");
+}
+
 function handleSubmitScore() {
-  displayFeedbackCard();
   insertFinalScore();
+  displayFeedbackCard();
 }
 
 /* 
@@ -60,5 +64,7 @@ function handleSubmitScore() {
 EVENT LISTENERS:
 ********************************
 */
-
+scoreButtons.forEach(btn =>
+  btn.addEventListener("click", handleSelectedButton)
+);
 submitBtn.addEventListener("click", handleSubmitScore);
