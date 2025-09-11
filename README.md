@@ -33,28 +33,86 @@ This is a solution to [this challenge on Frontend Mentor](https://www.frontendme
 
 - HTML
 - CSS
+- JavaScript
 - Desktop-first workflow
 
 ### What I Learned
 
 In this particular project:
 
-1.
+1. I wanted to focus on improving my css variable names so that they look more professional, help with readability and can be used in future projects.
+
+How I wrote it previously:
 
 ```css
-<Code proud of>
+:root {
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --10px: 0.625rem;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --24px: 1.5rem;
+  --26px: 1.625rem;
+  --28px: 1.75rem;
+  --30px: 1.875rem;
+  --32px: 2rem;
+  --34px: 2.125rem;
+  --36px: 2.25rem;
+  --38px: 2.375rem;
+  --40px: 2.5rem;
+  --50px: 3.125rem;
+  --60px: 3.75rem;
+}
 ```
+
+Using ChatGPT to assist and explain why developers like to use certain conventions, I came up with this:
+
+```css
+:root {
+  /* Font sizes (in rem) */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 0.9375rem; /* 15px body text */
+  --fs-lg: 1rem; /* 16px buttons */
+  --fs-xl: 1.75rem; /* 28px titles */
+
+  /* Spacing scale (rem) */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-xxl: 2rem; /* 32px */
+  --space-xxxl: 2.5rem; /* 40px */
+  --space-xxxxl: 3rem; /* 48px */
+
+  /* Border-radius scale */
+  --radius-sm: 1.40625rem; /* 22.5px */
+  --radius-md: 1.875rem; /* 30px */
+  --radius-circle: 50%; /* circular elements */
+
+  /* Line heights */
+  --lh-base: 1.6; /* 24px for body text at 15px */
+  --lh-heading: 1.25; /* 35px for headings at 28px */
+}
+```
+
+2. Keeping a consistent ordering for css properties of layout >> typography >> visuals >> interactivity helps for finding any issues that may arise.
+
+3. Giving classes more descriptive names e.g. `.card__btn` became `.rating-card__btn`.
 
 ### Continued Development
 
 After submitting this project, I wish to develop the following:
 
-1. <text>
+1. Keep this more consistent naming style for class names and css variables. And keep improved order for css properties. Mastering this early will help with future workflow speeds.
 
 ### Useful Resources
 
 - Nothing of note used for this project.
-- [<Text to appear> (<Media Type>)](link) - <description of how it helped>
 
 ## Noteworthy Updates Since Initial Submission
 
@@ -70,4 +128,3 @@ After submitting this project, I wish to develop the following:
 <a href="mailto:fraserjubb.dev@gmail.com"><img height="30px" align="left" alt="Gmail" style="padding-right:10px" title="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=plastic&logo=gmail&logoColor=white"/></a>
 
 <br/>
-# fm-interactive-rating-component
