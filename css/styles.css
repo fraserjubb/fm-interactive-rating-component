@@ -98,8 +98,9 @@ body {
   line-height: var(--lh-base);
   letter-spacing: 0;
 
-  background-color: var(--clr-grey950);
   color: var(--clr-grey500);
+
+  background-color: var(--clr-grey950);
 }
 
 img,
@@ -122,20 +123,22 @@ MAIN:
 */
 .container {
   display: flex;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background: var(--clr-gradient);
+
   width: 100%;
   max-width: 25.75rem; /* 412px */
   height: 26rem; /* 416px */
   border-radius: var(--radius-md);
+
+  background: var(--clr-gradient);
 }
 
 /* 
@@ -144,7 +147,6 @@ RATING CARD
 ***********
 */
 .rating-card {
-  /* display: block; */
   padding: var(--space-xxl) var(--space-xl);
 }
 
@@ -152,31 +154,40 @@ RATING CARD
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-grey900);
+
   width: var(--space-xxxxl);
   height: var(--space-xxxxl);
-  border-radius: var(--radius-circle);
   margin-bottom: var(--space-xxl);
+  border-radius: var(--radius-circle);
+
+  background-color: var(--clr-grey900);
 }
 
 .rating-card__icon {
   width: 1.03125rem /* 16.5px */;
   height: var(--space-lg);
 }
+
 .rating-card__title,
 .feedback-card__title {
-  font-size: var(--fs-xl);
-  line-height: var(--lh-heading);
-  font-weight: 700;
-  color: white;
   margin-bottom: var(--space-lg);
+
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: var(--lh-heading);
+
+  color: white;
 }
+
 .rating-card__description {
   margin-bottom: var(--space-lg);
 }
+
 .rating-card__btn-group {
   display: flex;
   gap: var(--space-xl);
+
+  width: 100%;
   max-width: 21.9375rem; /* 351px */
   margin-bottom: var(--space-xxl);
 }
@@ -186,48 +197,52 @@ RATING CARD
 
   width: var(--btn-size);
   height: var(--btn-size);
-  border-radius: var(--radius-circle);
   border: none;
-  background-color: var(--clr-grey900);
-  color: var(--clr-grey500);
+  border-radius: var(--radius-circle);
+
   font-size: var(--fs-lg);
+  font-weight: 700;
   line-height: var(--lh-base);
   letter-spacing: 0.2px;
-  font-weight: 700;
+  color: var(--clr-grey500);
+
+  background-color: var(--clr-grey900);
 
   transition: 0.3s;
 }
 
 .rating-card__btn:hover {
-  background-color: var(--clr-orange500);
   color: var(--clr-grey900);
+  background-color: var(--clr-orange500);
 }
 
 .rating-card__btn.rating-card__btn--selected {
-  background-color: white;
   color: var(--clr-grey900);
+  background-color: white;
 }
 
 .rating-card__btn--submit {
-  background-color: var(--clr-orange500);
-  border-radius: var(--radius-sm);
   width: 100%;
   max-width: 21.9375rem; /* 351px */
   height: 2.8125rem; /* 45px */
   border: none;
-  text-transform: uppercase;
-  color: var(--clr-grey950);
+  border-radius: var(--radius-sm);
+
   font-size: var(--fs-lg);
+  font-weight: 600;
+  text-transform: uppercase;
   line-height: var(--lh-base);
   letter-spacing: 0.17px;
-  font-weight: 600;
+  color: var(--clr-grey950);
+
+  background-color: var(--clr-orange500);
 
   transition: 0.3s;
 }
 
 .rating-card__btn--submit:hover {
-  background-color: white;
   color: var(--clr-grey900);
+  background-color: white;
 }
 
 /* Center texts on buttons */
@@ -243,13 +258,8 @@ FEEDBACK CARD
 ***********
 */
 .feedback-card {
-  /* display: none; */
-  /* background: var(--clr-gradient); */
-  /* max-width: 412px; */
-  /* height: 416px; */
-  padding: var(--space-xxxl) var(--space-xl);
-  /* border-radius: var(--30px); */
   align-items: center;
+  padding: var(--space-xxxl) var(--space-xl);
   text-align: center;
 }
 
@@ -259,16 +269,18 @@ FEEDBACK CARD
 }
 
 .feedback-card__final-score {
-  margin: var(--space-xxl) 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--clr-grey900);
-  border-radius: var(--radius-sm);
   width: 12.0625rem; /* 193px */
   height: var(--space-xxl);
+  margin: var(--space-xxl) 0;
+  border-radius: var(--radius-sm);
+
   color: var(--clr-orange500);
+
+  background-color: var(--clr-grey900);
 }
 
 .feedback-card__description {
@@ -282,9 +294,10 @@ FOOTER:
 */
 .attribution {
   text-align: center;
+  margin-bottom: var(--space-xl);
+
   font-size: var(--fs-xs);
   color: var(--clr-attribution);
-  margin-bottom: var(--space-xl);
 }
 
 /* LINKS */
