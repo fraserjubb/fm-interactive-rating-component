@@ -7,7 +7,7 @@
   --clr-gradient: linear-gradient(180deg, #232a34 0%, #181e27 100%);
   --clr-attribution: #3e52a3;
 
-  /* Pixel Sizes: */
+  /* Pixel Sizes:
   --4px: 0.25rem;
   --8px: 0.5rem;
   --10px: 0.625rem;
@@ -27,6 +27,33 @@
   --40px: 2.5rem;
   --50px: 3.125rem;
   --60px: 3.75rem;
+  */
+
+  /* Font sizes (in rem) */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 0.9375rem; /* 15px body text */
+  --fs-lg: 1rem; /* 16px buttons */
+  --fs-xl: 1.75rem; /* 28px titles */
+
+  /* Spacing scale (rem) */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-xxl: 2rem; /* 32px */
+  --space-xxxl: 2.5rem; /* 40px */
+  --space-xxxxl: 3rem; /* 48px */
+
+  /* Border-radius scale */
+  --radius-sm: 1.40625rem; /* 22.5px */
+  --radius-md: 1.875rem; /* 30px */
+  --radius-circle: 50%; /* circular elements */
+
+  /* Line heights */
+  --lh-base: 1.6; /* 24px for body text at 15px */
+  --lh-heading: 1.25; /* 35px for headings at 28px */
 }
 
 /* 
@@ -66,9 +93,9 @@ GLOBAL CSS VALUES:
 
 body {
   font-family: "Overpass", sans-serif;
-  font-size: 15px;
+  font-size: var(--fs-md);
   font-weight: 400;
-  line-height: 24px;
+  line-height: var(--lh-base);
   letter-spacing: 0;
 
   background-color: var(--clr-grey950);
@@ -96,6 +123,7 @@ MAIN:
 .container {
   display: flex;
   height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -105,9 +133,9 @@ MAIN:
   flex-direction: column;
   background: var(--clr-gradient);
   width: 100%;
-  max-width: 412px;
-  height: 416px;
-  border-radius: var(--30px);
+  max-width: 25.75rem; /* 412px */
+  height: 26rem; /* 416px */
+  border-radius: var(--radius-md);
 }
 
 /* 
@@ -117,7 +145,7 @@ RATING CARD
 */
 .rating-card {
   /* display: block; */
-  padding: var(--32px) var(--24px);
+  padding: var(--space-xxl) var(--space-xl);
 }
 
 .rating-card__icon-wrapper {
@@ -125,43 +153,45 @@ RATING CARD
   justify-content: center;
   align-items: center;
   background-color: var(--clr-grey900);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  margin-bottom: 32px;
+  width: var(--space-xxxxl);
+  height: var(--space-xxxxl);
+  border-radius: var(--radius-circle);
+  margin-bottom: var(--space-xxl);
 }
 
 .rating-card__icon {
-  width: 16.5px;
-  height: var(--16px);
+  width: 1.03125rem /* 16.5px */;
+  height: var(--space-lg);
 }
 .rating-card__title,
 .feedback-card__title {
-  font-size: var(--28px);
-  line-height: 35px;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-heading);
   font-weight: 700;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-lg);
 }
 .rating-card__description {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-lg);
 }
 .rating-card__btn-group {
   display: flex;
-  gap: var(--24px);
-  max-width: 351px;
-  margin-bottom: 32px;
+  gap: var(--space-xl);
+  max-width: 21.9375rem; /* 351px */
+  margin-bottom: var(--space-xxl);
 }
 
 .rating-card__btn {
-  width: 51px;
-  height: 51px;
-  border-radius: 50%;
+  --btn-size: 3.1875rem; /* 51px */
+
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: var(--radius-circle);
   border: none;
   background-color: var(--clr-grey900);
   color: var(--clr-grey500);
-  font-size: var(--16px);
-  line-height: 24px;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-base);
   letter-spacing: 0.2px;
   font-weight: 700;
 
@@ -180,15 +210,15 @@ RATING CARD
 
 .rating-card__btn--submit {
   background-color: var(--clr-orange500);
-  border-radius: 22.5px;
+  border-radius: var(--radius-sm);
   width: 100%;
-  max-width: 351px;
-  height: 45px;
+  max-width: 21.9375rem; /* 351px */
+  height: 2.8125rem; /* 45px */
   border: none;
   text-transform: uppercase;
   color: var(--clr-grey950);
-  font-size: var(--14px);
-  line-height: var(--24px);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-base);
   letter-spacing: 0.17px;
   font-weight: 600;
 
@@ -198,6 +228,13 @@ RATING CARD
 .rating-card__btn--submit:hover {
   background-color: white;
   color: var(--clr-grey900);
+}
+
+/* Center texts on buttons */
+.rating-card__btn span,
+.rating-card__btn--submit span {
+  display: inline-block;
+  transform: translateY(2px);
 }
 
 /* 
@@ -210,32 +247,32 @@ FEEDBACK CARD
   /* background: var(--clr-gradient); */
   /* max-width: 412px; */
   /* height: 416px; */
-  padding: var(--40px) var(--32px);
+  padding: var(--space-xxxl) var(--space-xl);
   /* border-radius: var(--30px); */
   align-items: center;
   text-align: center;
 }
 
 .feedback-card__icon {
-  width: 162px;
-  height: 108px;
+  width: 10.125rem; /* 162px */
+  height: 6.75rem; /* 108px */
 }
 
 .feedback-card__final-score {
-  margin: var(--32px) 0;
+  margin: var(--space-xxl) 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: var(--clr-grey900);
-  border-radius: 22.5px;
-  width: 193px;
-  height: 32px;
+  border-radius: var(--radius-sm);
+  width: 12.0625rem; /* 193px */
+  height: var(--space-xxl);
   color: var(--clr-orange500);
 }
 
 .feedback-card__description {
-  width: 340px;
+  width: 21.25rem; /* 340px */
 }
 
 /* 
@@ -245,9 +282,9 @@ FOOTER:
 */
 .attribution {
   text-align: center;
-  font-size: var(--12px);
+  font-size: var(--fs-xs);
   color: var(--clr-attribution);
-  margin-bottom: var(--24px);
+  margin-bottom: var(--space-xl);
 }
 
 /* LINKS */
