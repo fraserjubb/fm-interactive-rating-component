@@ -1,3 +1,90 @@
-.attribution {
-  margin-top: var(--40px);
+/* 
+*******
+MOBILE 
+*******
+*/
+
+@media (max-width: 540px) {
+  :root {
+    --fs-xl: 1.5rem;
+  }
+
+  body {
+    font-size: var(--fs-sm);
+    line-height: 1.375;
+  }
+
+  .card {
+    max-width: 20.44rem /* 327px */;
+    height: 22.5rem /* 360px */;
+  }
+
+  /* 
+***********
+RATING CARD 
+***********
+*/
+  .rating-card {
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  .rating-card__icon-wrapper {
+    width: var(--space-xxxl);
+    height: var(--space-xxxl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .rating-card__icon {
+    width: 0.8125rem;
+    height: 0.8125rem;
+  }
+
+  .rating-card__title,
+  .feedback-card__title {
+    font-size: var(--fs-xl);
+  }
+
+  .rating-card__btn-group {
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .rating-card__btn,
+  .rating-card__btn--submit {
+    --btn-size: 2.625rem; /* 42px */
+
+    font-size: inherit;
+    letter-spacing: 1.87px;
+  }
+
+  /* 
+***********
+FEEDBACK CARD 
+***********
+*/
+  .feedback-card {
+    padding: var(--space-xxl) var(--space-xl);
+  }
+  .feedback-card__icon {
+    width: 9rem; /* 144px */
+    height: 6rem; /* 96px */
+  }
+
+  .feedback-card__final-score {
+    width: 10.5rem; /* 168px */
+    margin: var(--space-xl) 0;
+  }
+
+  .feedback-card__description {
+    width: 17.44rem; /* 279px */
+  }
+
+  /* 
+********************************
+FOOTER:
+********************************
+*/
+  .attribution {
+    margin-top: var(--space-xxxl);
+  }
 }

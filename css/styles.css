@@ -7,28 +7,6 @@
   --clr-gradient: linear-gradient(180deg, #232a34 0%, #181e27 100%);
   --clr-attribution: #3e52a3;
 
-  /* Pixel Sizes:
-  --4px: 0.25rem;
-  --8px: 0.5rem;
-  --10px: 0.625rem;
-  --12px: 0.75rem;
-  --14px: 0.875rem;
-  --16px: 1rem;
-  --18px: 1.125rem;
-  --20px: 1.25rem;
-  --24px: 1.5rem;
-  --26px: 1.625rem;
-  --28px: 1.75rem;
-  --30px: 1.875rem;
-  --32px: 2rem;
-  --34px: 2.125rem;
-  --36px: 2.25rem;
-  --38px: 2.375rem;
-  --40px: 2.5rem;
-  --50px: 3.125rem;
-  --60px: 3.75rem;
-  */
-
   /* Font sizes (in rem) */
   --fs-xs: 0.75rem; /* 12px */
   --fs-sm: 0.875rem; /* 14px */
@@ -208,7 +186,7 @@ RATING CARD
 
   background-color: var(--clr-grey900);
 
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .rating-card__btn:hover {
