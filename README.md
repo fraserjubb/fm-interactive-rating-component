@@ -23,7 +23,7 @@ This is a solution to [this challenge on Frontend Mentor](https://www.frontendme
 
 ### Project Links
 
-- Solution URL: [Click Here](url)
+- Solution URL: [Click Here](https://www.frontendmentor.io/solutions/interactive-rating-component-solution---challenge-11-9lTLNUMTGR)
 - Live Site URL: [Click Here](https://fm-interactiveratingcomponent-fraser.netlify.app/)
 - Frontend Mentor Profile: [@fraserjubb](https://www.frontendmentor.io/profile/fraserjubb)
 
