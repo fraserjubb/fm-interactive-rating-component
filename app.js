@@ -44,11 +44,24 @@ function createScoreElement() {
 }
 
 function insertFinalScore() {
+  const score = getSelectedScore();
+  if (!score) return null;
+
   const feedbackCardTitle = document.querySelector(".feedback-card__title");
 
   const scoreGivenElement = createScoreElement();
 
   feedbackCardTitle.insertAdjacentElement("beforebegin", scoreGivenElement);
+}
+
+function createHint() {
+  const hintElement = document.createElement("p");
+  hintElement.className = "hint";
+
+  const hintText = document.createTextNode(`Please Select A Score`);
+
+  hintElement.appendChild(hintText);
+  return hintElement;
 }
 
 function displayFeedbackCard() {
@@ -57,8 +70,16 @@ function displayFeedbackCard() {
 }
 
 function handleSubmitScore() {
-  insertFinalScore();
-  displayFeedbackCard();
+  const finalScore = insertFinalScore();
+
+  if (finalScore === null) {
+    if (!document.querySelector(".hint")) {
+      const hint = createHint();
+      ratingCard.appendChild(hint);
+    }
+  } else {
+    displayFeedbackCard();
+  }
 }
 
 /* 
