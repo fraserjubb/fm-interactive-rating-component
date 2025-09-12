@@ -125,6 +125,7 @@ RATING CARD
 ***********
 */
 .rating-card {
+  position: relative;
   padding: var(--space-xxl) var(--space-xl);
 }
 
@@ -230,6 +231,13 @@ RATING CARD
   transform: translateY(2px);
 }
 
+/* Hint if no score given */
+.rating-card .hint {
+  position: absolute;
+  bottom: -3rem;
+  left: 109.5px;
+  margin: 0;
+}
 /* 
 ***********
 FEEDBACK CARD 
@@ -246,7 +254,8 @@ FEEDBACK CARD
   height: 6.75rem; /* 108px */
 }
 
-.feedback-card__final-score {
+.feedback-card__final-score,
+.hint {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,13 +310,6 @@ FOOTER:
 UTILITY CLASSES:
 ********************************
 */
-.layout__column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
 .is-inactive {
   /* This needs to be uncommented in order to work */
   display: none;
