@@ -1,6 +1,6 @@
-# FM - <Challenge Name> Solution - Fraser Jubb
+# FM - Interactive Rating Component Solution - Fraser Jubb
 
-This is a solution to [this challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/<link>).
+This is a solution to [this challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI).
 
 ## 📖 Table of contents
 
@@ -24,7 +24,7 @@ This is a solution to [this challenge on Frontend Mentor](https://www.frontendme
 ### Project Links
 
 - Solution URL: [Click Here](url)
-- Live Site URL: [Click Here](url)
+- Live Site URL: [Click Here](https://fm-interactiveratingcomponent-fraser.netlify.app/)
 - Frontend Mentor Profile: [@fraserjubb](https://www.frontendmentor.io/profile/fraserjubb)
 
 ## My Process
